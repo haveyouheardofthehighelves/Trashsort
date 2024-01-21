@@ -19,7 +19,7 @@ def move_to_trash():
     if current_pos == 180:
         writetoarduino('!')
     if current_dir == 'backward':
-        writetoarduino('%')  # 1 = forward
+        writetoarduino('%')  
     current_pos = 0
     current_dir = 'forward'
 
@@ -30,7 +30,7 @@ def move_to_recycle():
     if current_pos == 0:
         writetoarduino('!')
     if current_dir == 'backward':
-        writetoarduino('%')  # 1 = forward
+        writetoarduino('%')  
     current_pos = 180
     current_dir = 'forward'
 
