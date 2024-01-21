@@ -2,8 +2,8 @@
 Servo myservo;
 int servopin = 9; 
 int ir = A0; 
-int cw = 3; 
-int ccw = 5;  
+int cw = 8;
+int ccw = 10;
 int last_angle = 0;
 void setup() {
   pinMode(servopin, OUTPUT); 
