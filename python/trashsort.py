@@ -52,7 +52,7 @@ def move_back():
     global current_dir
     if current_dir == 'forward':
         set_motor_direction('backward')
-
+    current_dir = 'backward'
 
 
 
