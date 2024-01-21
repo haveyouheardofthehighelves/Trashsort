@@ -17,6 +17,7 @@ void setup() {
   pinMode(ccw, OUTPUT); 
   myservo.attach(servopin); 
   myservo.write(last_angle); 
+  digitalWrite(ccw, LOW); 
   Serial.begin(9600); 
   // put your setup code here, to run once:
 }

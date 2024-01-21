@@ -1,0 +1,6 @@
+0 WendyTrash
+1 RamenTrash
+2 StrawTrash
+3 GallonRecycle
+4 FairlifeRecycle
+5 Unknown
