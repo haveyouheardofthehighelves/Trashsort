@@ -12,9 +12,9 @@ void setup() {
   pinMode(ccw, OUTPUT); 
   myservo.attach(servopin); 
   myservo.write(last_angle); 
+  digitalWrite(ccw, LOW); 
   Serial.begin(9600); 
   // put your setup code here, to run once:
-
 }
 
 void loop() {
@@ -29,10 +29,9 @@ void loop() {
       last_angle = 0; 
     }
     delay(1500); 
-    digitalWrite(3, HIGH); 
+    digitalWrite(cw, HIGH); 
     delay(500);
-    digitalWrite(3, LOW); 
+    digitalWrite(cw, LOW); 
   }
-  // put your main code here, to run repeatedly:
-
 }
+  // put your main code here, to run repeatedly:
