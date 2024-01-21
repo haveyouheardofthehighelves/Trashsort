@@ -6,6 +6,11 @@ import serial
 current_pos = 0
 
 
+def writetoarduino(writeall):
+    arr = bytes(writeall, 'utf-8')
+    ser.write(arr)
+
+
 def initial_position():
     global current_pos
     current_pos = 0
