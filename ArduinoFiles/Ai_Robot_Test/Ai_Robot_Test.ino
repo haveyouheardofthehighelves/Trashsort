@@ -54,7 +54,7 @@ void loop() {
       if(c == '('){
         digitalWrite(10, HIGH); 
         digitalWrite(8, LOW); 
-        delay(500); 
+        delay(1000); 
         digitalWrite(10, LOW); 
       }
       if (c == '*') {

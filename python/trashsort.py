@@ -44,8 +44,8 @@ while True:
     _, img = cap.read()
     prediction, index = classifier.getPrediction(img)
     print(prediction[index])
-    if prediction[index] < .7:
-        write_LCD('Unknown', 'Object')
+    if prediction[index] < .93:
+        write_LCD('Unknown', f'{round(prediction[index] * 100, 2)}%')
     elif index in (2, 3, 4):
         write_LCD(class_names[index], f'Trash: {round(prediction[index] * 100, 2)}%')
     elif index in (1, 0):
@@ -53,7 +53,7 @@ while True:
     elif index == 5:
         write_LCD('no object', 'present')
     if keyboard.is_pressed(' '):
-        if prediction[index] >= .7:
+        if prediction[index] >= .93:
             if index in (2, 3, 4):
                 move_to_trash()
             if index in (1, 0):
@@ -61,5 +61,4 @@ while True:
         else:
             move_back()
 
-    cv2.imshow("Image", img)
     cv2.waitKey(1)
