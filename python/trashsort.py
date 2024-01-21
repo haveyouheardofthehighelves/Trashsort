@@ -55,10 +55,10 @@ while True:
     _, img = cap.read()
     prediction, index = classifier.getPrediction(img)
     if index in (0, 1, 2):
-        write_LCD(class_names[index], 'Trash')
+        write_LCD(class_names[index], 't')
         move_to_trash()
     if index in (3, 4):
-        write_LCD(class_names[index], 'Recycling')
+        write_LCD(class_names[index], 'r')
         move_to_recycle()
     print(ser.readline())
     cv2.imshow("Hello", img)
