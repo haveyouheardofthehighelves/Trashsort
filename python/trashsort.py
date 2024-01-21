@@ -31,10 +31,10 @@ def set_motor_direction(dir):
 def move_to_trash():
     global current_pos
     global current_dir
-    if current_dir == 'backward':
-        set_motor_direction('%')  # 1 = forward
     if current_pos == 180:
         set_servo_position(')')
+    if current_dir == 'backward':
+        set_motor_direction('%')  # 1 = forward
     current_pos = 0
     current_dir = 'forward'
 
@@ -42,10 +42,10 @@ def move_to_trash():
 def move_to_recycle():
     global current_pos
     global current_dir
-    if current_dir == 'backward':
-        set_motor_direction('$')  # 1 = forward
     if current_pos == 0:
         set_servo_position('(')
+    if current_dir == 'backward':
+        set_motor_direction('$')  # 1 = forward
     current_pos = 180
     current_dir = 'forward'
 
@@ -63,13 +63,13 @@ classifier = Classifier('converted_keras/keras_model.h5', 'converted_keras/label
 initial_position()
 detected = False
 while True:
-    _, img = cap.read()
-    prediction, index = classifier.getPrediction(img)
-    if detected:
-        if index in (0, 1, 2):
-            move_to_trash()
-        if index in (3, 4):
-            move_to_recycle()
-
-    cv2.imshow("Image", img)
-    cv2.waitKey(1)
+    if '.' in str(ser.readline()):
+        _, img = cap.read()
+        prediction, index = classifier.getPrediction(img)
+        if detected:
+            if index in (0, 1, 2):
+                move_to_trash()
+            if index in (3, 4):
+                move_to_recycle()
+        cv2.imshow("Image", img)
+        cv2.waitKey(1)
