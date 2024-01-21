@@ -24,6 +24,10 @@ def move_to_recycle():
 def move_back():
     writetoarduino('(')
 
+ def write_LCD(str1, str2):
+    writetoarduino(f'{str1}*')
+    writetoarduino(f'{str2}#')
+
 
 ser = serial.Serial("COM3", 9600, timeout=1)
 cap = cv2.VideoCapture(0)
