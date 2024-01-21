@@ -1,5 +1,6 @@
-0 WendyTrash
-1 RamenTrash
-2 StrawTrash
-3 GallonRecycle
-4 FairlifeRecycle
+0 Fairlife_Bottle
+1 Empty_Gallon
+2 Wendys_Box
+3 Plastic_Straw
+4 Ramen_Packet
+5 Nothing
